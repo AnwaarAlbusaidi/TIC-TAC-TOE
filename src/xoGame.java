@@ -26,7 +26,7 @@ public class xoGame {
 		char playerChoice;
 		boolean Player1= true;
 		print(grid);
-		while(Playgame = true)
+		while(Playgame == true)
 		{
 			
 			if(Player1)
@@ -64,6 +64,18 @@ public class xoGame {
 					}
 					Player1= true;
 				}
+			
+			if(woner(grid) == 'x')
+			{
+				 System.out.println("Player 1 own");
+				 Playgame = false;
+			}
+			else if(woner(grid) == 'o')
+			{
+				System.out.println("Player 2 own");
+				 Playgame = false;
+			}
+			
 			} // End of while
 	}//End of Main class
 	
@@ -85,23 +97,26 @@ public class xoGame {
 	
 	public static char woner(char[][] g)
 	{
-		for(int i= 0;i<3;i++) //to check the row
+		for(int i=0;i<3;i++) //to check the row
 		{
-			if((g[i][0] == g[i][1] && g[i][1] == g[i][2]) = 'x')
-			 return 'x';
-			else if((g[i][0] == g[i][1] && g[i][1] == g[i][2]) = 'o')
-			 return '0';
+          	if(g[i][0] == g[i][1] && g[i][1] == g[i][2])
+			 return g[i][0];
 		}
-		for(int i= 0;i<3;i++) //to check the column
+          for(int j= 0;j<3;j++) //to check the column
 		{
-			if((g[0][i] == g[1][i] && g[1][i] == g[2][i]) = 'x')
-			 return 'x';
-			else if((g[0][i] == g[1][i] && g[1][i] == g[2][i]) = 'o')
-			 return '0';
+			if(g[0][j] == g[1][j] && g[1][j] == g[2][j])
+			 return g[0][j];
 		}
 		
-	
-			
-			
+		if(g[0][0] == g[1][1] && g[1][1] == g[2][2]) //check dislodge
+			 return g[0][0];
+		
+		if(g[0][2] == g[1][1] && g[1][1] == g[2][0]) //check dislodge
+			 return g[1][1];
+		
+		return ' ';
 	}
+	
+	
+	
 }//End of xoGame class
