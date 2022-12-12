@@ -6,30 +6,27 @@ import java.util.Scanner;
  */
 
 /**
- * @author LAP-8
- *
+ * @This class implemented to play  Tic-Tac-Toe
+ * written by  : Anwaar Al-Busaidi
  */
 public class xoGame {
-	/**
-	 * @
-	 */
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
        
 		//Declaration of variables
 		Scanner scan = new Scanner(System.in);
-		 char [][] grid = {{'1','2','3'},
-		                   {'4','5','6'},
-		                   {'7','8','9'}};
-		int i,j;
+		char [][] grid = {{'1','2','3'},{'4','5','6'}, {'7','8','9'}};
+		int i,j;   //variables to be used in loops
 		boolean Playgame = true;
 		char playerChoice;
 		boolean Player1= true;
+		
 		print(grid);
-		while(Playgame == true)
+		while(Playgame == true)    
 		{
 			
-			if(Player1)
+			if(Player1)  //check if it is player 1 turn
 			{
 				System.out.println("Player 1, Make a move(symbol : x), Enter postion: ");
 				playerChoice = scan.next().charAt(0);
@@ -47,7 +44,7 @@ public class xoGame {
 				System.out.println();
 				Player1= false;
 			}
-				else 
+				else   //it is player 2 turn
 				{
 					System.out.println("Player 2, Make a move(symbol : 0), Enter postion: ");
 					playerChoice = scan.next().charAt(0);
@@ -65,19 +62,20 @@ public class xoGame {
 					Player1= true;
 				}
 			
-			if(woner(grid) == 'x')
+			if(winner(grid) == 'x')
 			{
-				 System.out.println("Player 1 own");
+				 System.out.println("Player 1 is the winner");
 				 Playgame = false;
 			}
-			else if(woner(grid) == 'o')
+			else if(winner(grid) == 'o')
 			{
-				System.out.println("Player 2 own");
+				System.out.println("Player 2 is the winner");
 				 Playgame = false;
 			}
 			
 			} // End of while
 	}//End of Main class
+	
 	
 	//print function to print the grid game
 	public static void print(char[][] g)
@@ -95,7 +93,7 @@ public class xoGame {
 	
 	}//end of print function
 	
-	public static char woner(char[][] g)
+	public static char winner(char[][] g)
 	{
 		for(int i=0;i<3;i++) //to check the row
 		{
