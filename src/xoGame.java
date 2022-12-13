@@ -43,7 +43,16 @@ public class xoGame {
 						Player1= true;
 					}
 					else
+					{
 					   grid[rowIndex][columIndex] = 'x';
+					   if (winner(grid) == 'x') {
+							System.out.println("Player 1 is the winner");
+							Playgame = false;
+						} else if (winner(grid) == 'o') {
+							System.out.println("Player 2 is the winner");
+							Playgame = false;
+						}
+					}
 					   print(grid);
 				}
 				else if(playerChoice <= 6)
@@ -56,7 +65,16 @@ public class xoGame {
 						Player1= true;
 					}
 					else
+					{
 						grid[rowIndex][columIndex] = 'x';
+						if (winner(grid) == 'x') {
+							System.out.println("Player 1 is the winner");
+							Playgame = false;
+						} else if (winner(grid) == 'o') {
+							System.out.println("Player 2 is the winner");
+							Playgame = false;
+						}
+					}
 					    print(grid);    
 				}
 				else if(playerChoice <= 9)
@@ -69,7 +87,19 @@ public class xoGame {
 						Player1= true;
 					}
 					else
+					{
 					grid[rowIndex][columIndex] = 'x';
+					if (winner(grid) == 'x') 
+					  {
+						System.out.println("Player 1 is the winner");
+						Playgame = false;
+					  }
+					else if (winner(grid) == 'o') 
+					  {
+						System.out.println("Player 2 is the winner");
+						Playgame = false;
+					  }
+					}
 					print(grid);
 				}
 				
@@ -94,7 +124,15 @@ public class xoGame {
 					else
 					{
 					    grid[rowIndex][columIndex] = '0';
-					    Player1 = true;
+					    if (winner(grid) == 'x') {
+							System.out.println("Player 1 is the winner");
+							Playgame = false;
+						} else if (winner(grid) == 'o') {
+							System.out.println("Player 2 is the winner");
+							Playgame = false;
+						}
+						else
+					       Player1 = true;
 					}
 					print(grid);
 					
@@ -111,7 +149,15 @@ public class xoGame {
 					else
 					{
 					    grid[rowIndex][columIndex] = '0';
-					    Player1 = true;
+					    if (winner(grid) == 'x') {
+							System.out.println("Player 1 is the winner");
+							Playgame = false;
+						} else if (winner(grid) == 'o') {
+							System.out.println("Player 2 is the winner");
+							Playgame = false;
+						}
+						else
+					       Player1 = true;
 					}
 					print(grid);
 				}
@@ -127,11 +173,21 @@ public class xoGame {
 					else
 					{
 					    grid[rowIndex][columIndex] = '0';
-						Player1 = true;
+					    if (winner(grid) == 'x')
+					    {
+							System.out.println("Player 1 is the winner");
+							Playgame = false;
+						} 
+					    else if (winner(grid) == 'o') 
+						{
+							System.out.println("Player 2 is the winner");
+							Playgame = false;
+						}
+					    else
+					       Player1 = true;
 					}
 					print(grid);
 				}
-				//Player1 = true;
 			}//End of else
               
               
