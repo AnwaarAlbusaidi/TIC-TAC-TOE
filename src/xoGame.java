@@ -153,7 +153,7 @@ public class xoGame {
 
 	public static void howIsTheWinner(char[][] y) {
 		for (int row = 0; row < y.length; row++) {
-			for (int colum = 0; colum < y.length; colum++) {
+			for (int colum = 0; colum < y.length && playGame == true; colum++) {
 				if (winner(y) == 'x') {
 					playGame = false;
 					System.out.println("Player 1 is the winner");
