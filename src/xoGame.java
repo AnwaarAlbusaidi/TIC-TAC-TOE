@@ -16,88 +16,94 @@ public class xoGame {
 		boolean Player1 = true;
 		int rowIndex;
 		int columIndex;
-        int count = 1;
+		int count = 1;
 		while (playGame == true) {
 			print(grid);
-			if(count <= 9) {
-			if (Player1) // check if it is player 1 turn
-			{
-				System.out.println("Player 1, Make a move(symbol : x), Enter postion: ");
-				playerChoice = scan.nextInt();
-				if (playerChoice <= 3) {
-					rowIndex = 0; // if input is 1 or 2 or 3 that mean we are in row 0
-					columIndex = playerChoice - 1;
-					if (check(grid[rowIndex][columIndex]) == true)//check if Someone already made a move at this position!									 
-						Player1 = true;
-					else {
-							grid[rowIndex][columIndex] = 'x';
-							howIsTheWinner(grid);
-					}
-				}
-
-				else if (playerChoice <= 6) {
-					rowIndex = 1; // if input is 4 or 5 or 6 that mean we are in row 1
-					columIndex = playerChoice - 4;
-					if (check(grid[rowIndex][columIndex]) == true)//check if Someone already made a move at this position!
-						Player1 = true;
-					else {
+			if (count <= 9) {
+				if (Player1) // check if it is player 1 turn
+				{
+					System.out.println("Player 1, Make a move(symbol : x), Enter postion: ");
+					playerChoice = scan.nextInt();
+					if (playerChoice <= 3) {
+						rowIndex = 0; // if input is 1 or 2 or 3 that mean we are in row 0
+						columIndex = playerChoice - 1;
+						if (check(grid[rowIndex][columIndex]) == true)// check if Someone already made a move at this
+																		// position!
+							Player1 = true;
+						else {
 							grid[rowIndex][columIndex] = 'x';
 							howIsTheWinner(grid);
 						}
-				} else if (playerChoice <= 9) {
-					rowIndex = 2; // if input is 7 or 8 or 9 that mean we are in row 2
-					columIndex = playerChoice - 7;
-					if (check(grid[rowIndex][columIndex]) == true)//check if Someone already made a move at this position!
-						Player1 = true;
-					else {
+					}
+
+					else if (playerChoice <= 6) {
+						rowIndex = 1; // if input is 4 or 5 or 6 that mean we are in row 1
+						columIndex = playerChoice - 4;
+						if (check(grid[rowIndex][columIndex]) == true)// check if Someone already made a move at this
+																		// position!
+							Player1 = true;
+						else {
 							grid[rowIndex][columIndex] = 'x';
 							howIsTheWinner(grid);
+						}
+					} else if (playerChoice <= 9) {
+						rowIndex = 2; // if input is 7 or 8 or 9 that mean we are in row 2
+						columIndex = playerChoice - 7;
+						if (check(grid[rowIndex][columIndex]) == true)// check if Someone already made a move at this
+																		// position!
+							Player1 = true;
+						else {
+							grid[rowIndex][columIndex] = 'x';
+							howIsTheWinner(grid);
+						}
 					}
-				}
-				System.out.println();
-				Player1 = false;
+					System.out.println();
+					Player1 = false;
 
-			} // End of if (player1)
+				} // End of if (player1)
 
-			else // it is player 2 turn
-			{
-				System.out.println("Player 2, Make a move(symbol : o), Enter postion: ");
-				playerChoice = scan.nextInt();
-				if (playerChoice <= 3) {
-					rowIndex = 0; // if input is 1 or 2 or 3 that mean we are in row 0
-					columIndex = playerChoice - 1;
-					if (check(grid[rowIndex][columIndex]) == true)//check if Someone already made a move at this position!
-						Player1 = false;
-					else {
+				else // it is player 2 turn
+				{
+					System.out.println("Player 2, Make a move(symbol : o), Enter postion: ");
+					playerChoice = scan.nextInt();
+					if (playerChoice <= 3) {
+						rowIndex = 0; // if input is 1 or 2 or 3 that mean we are in row 0
+						columIndex = playerChoice - 1;
+						if (check(grid[rowIndex][columIndex]) == true)// check if Someone already made a move at this
+																		// position!
+							Player1 = false;
+						else {
 							grid[rowIndex][columIndex] = 'o';
 							howIsTheWinner(grid);
 							Player1 = true;
-					}
-				} else if (playerChoice <= 6) {
-					rowIndex = 1; // if input is 4 or 5 or 6 that mean we are in row 1
-					columIndex = playerChoice - 4;
-					if (check(grid[rowIndex][columIndex]) == true)//check if Someone already made a move at this position!
-						Player1 = false;
-					else {
+						}
+					} else if (playerChoice <= 6) {
+						rowIndex = 1; // if input is 4 or 5 or 6 that mean we are in row 1
+						columIndex = playerChoice - 4;
+						if (check(grid[rowIndex][columIndex]) == true)// check if Someone already made a move at this
+																		// position!
+							Player1 = false;
+						else {
 							grid[rowIndex][columIndex] = 'o';
 							howIsTheWinner(grid);
 							Player1 = true;
-					}
-				} else if (playerChoice <= 9) {
-					rowIndex = 2; // if input is 7 or 8 or 9 that mean we are in row 2
-					columIndex = playerChoice - 7;
-					if (check(grid[rowIndex][columIndex]) == true)//check if Someone already made a move at this position!
-						Player1 = false;
-					else {
+						}
+					} else if (playerChoice <= 9) {
+						rowIndex = 2; // if input is 7 or 8 or 9 that mean we are in row 2
+						columIndex = playerChoice - 7;
+						if (check(grid[rowIndex][columIndex]) == true)// check if Someone already made a move at this
+																		// position!
+							Player1 = false;
+						else {
 							grid[rowIndex][columIndex] = 'o';
 							howIsTheWinner(grid);
 							Player1 = true;
-					}
+						}
 
-				}
-			} // End of else
-			count++;
-			}//End of if count
+					}
+				} // End of else
+				count++;
+			} // End of if count
 			else {
 				System.out.println("Board is Full");
 				playGame = false;
@@ -164,6 +170,5 @@ public class xoGame {
 			}
 		}
 	}// end of howIsTheWinner method
-
 
 }// End of xoGame class
